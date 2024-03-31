@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vacancy Search</title>
+</head>
+<body>
+    <h1>Search Vacancies</h1>
+    <form method="GET">
+        Salary From: <input type="number" name="salary_from"><br>
+        Salary To: <input type="number" name="salary_to"><br>
+        Exact Salary: <input type="number" name="salary"><br>
+        <button type="submit">Search</button>
+    </form>
+
+    <h2>Filtered Vacancies</h2>
+    <ul>
+        {% for vacancy in vacancies %}
+            <li>{{ vacancy.position }} {{ vacancy.salary }} $</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

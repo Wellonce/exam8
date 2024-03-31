@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Welcome to our Job Portal</h1>
+    <p>Find your dream job here!</p>
+
+    <a href="{% url 'search_vacancies' %}">Search Vacancies</a>
+    <h1>Please see the available vacancies below:</h1>
+    <ul>
+        {% for vacancy in vacancies %}
+            <li><b>Required position:</b>{{ vacancy.position|title }} <br> <b>Tasks: </b> {{ vacancy.desc }} <br> <b>Salary offered: </b> {{ vacancy.salary }} $<hr></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

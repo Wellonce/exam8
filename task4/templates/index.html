@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+
+</head>
+<body>
+    <!-- <h1>Sports</h1>
+    <ul>
+        {% for sport in sports %}
+            <li>{{ sport.name }}</li>
+        {% endfor %}
+    </ul>
+
+
+
+    <h1>Leagues</h1>
+    <ul>
+        {% for league in leagues %}
+            <li>{{ league.name }}</li>
+        {% endfor %}
+    </ul> -->
+{% block content %}
+
+    <h1>Live Matches</h1>
+    <ul>
+        {% for match in live_matches %}
+            <li>{{ match.home_team.name }} {{match.score}} {{ match.away_team.name }} </li>
+        {% endfor %}
+    </ul>
+
+    <h1>Upcoming Matches</h1>
+    <ul>
+        {% for match in upcoming_matches %}
+            <li>{{ match.home_team.name }} vs {{ match.away_team.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Completed Matches</h1>
+    <ul>
+        {% for match in completed_matches %}
+            <li>{{ match.home_team.name }} {{ match.score }} {{ match.away_team.name }} </li>
+        {% endfor %}
+    </ul>
+
+    <h1>Team Standings</h1>
+    <table>
+        <tr>
+            <th>Team</th>
+            <th>Points</th>
+        </tr>
+        {% for team in team_standings %}
+            <tr>
+                <td>{{ team.team.name }}</td>
+                <td>{{ team.points }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+</body>
+</html>

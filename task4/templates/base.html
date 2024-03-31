@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <nav>
+        <h1>Sports</h1>
+        <ul>
+            {% for sport in sports %}
+                <li>{{ sport.name }}</li>
+            {% endfor %}
+        </ul>
+
+        <h1>Leagues</h1>
+        <ul>
+            {% for league in leagues %}
+                <li>{{ league.name }}</li>
+            {% endfor %}
+        </ul>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
